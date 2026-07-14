@@ -1,0 +1,31 @@
+{
+  "days": [
+    "February_10",
+    "February_11",
+    "February_12",
+    "February_13",
+    "February_14"
+  ],
+  "totalRows": 89104,
+  "totalMatches": 796,
+  "totalPlayers": 339,
+  "maps": [
+    "AmbroseValley",
+    "GrandRift",
+    "Lockdown"
+  ],
+  "eventDict": [
+    "BotKill",
+    "BotKilled",
+    "BotPosition",
+    "Kill",
+    "Killed",
+    "KilledByStorm",
+    "Loot",
+    "Position"
+  ],
+  "dataQualityNotes": [
+    "751 bot rows use non-standard event names (e.g. 'Position'/'Loot' instead of 'BotPosition'); classification uses user_id UUID-vs-numeric shape, not event name prefix.",
+    "February 14 is a partial day (data collection was ongoing per README)."
+  ]
+}

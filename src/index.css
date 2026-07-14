@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Storm console palette: dark tactical ops map. Violet storm accent ties to
+     the in-fiction storm mechanic (KilledByStorm). Amber/blue are reserved
+     strictly for the human-vs-bot encoding mandated by the brief. */
+  --bg-void: #0a0c12;
+  --panel: rgba(20, 24, 34, 0.72);
+  --panel-solid: #141826;
+  --panel-raised: #1a1f2e;
+  --border: #232a3d;
+  --border-soft: #1a2030;
+
+  --text-primary: #eceef4;
+  --text-secondary: #9aa1b8;
+  --text-dim: #4a5169;
+
+  --storm: #8b6bff;
+  --storm-dim: #5b4a9e;
+  --storm-glow: rgba(139, 107, 255, 0.35);
+
+  --human: #4fa8ff;
+  --human-dim: rgba(79, 168, 255, 0.18);
+  --bot: #ff9f40;
+  --bot-dim: rgba(255, 159, 64, 0.18);
+
+  --kill: #ff5c5c;
+  --death: #b3283f;
+  --storm-death: #a25bff;
+  --loot: #ffd23f;
+
+  --success: #3ed6a8;
+  --danger: #ff5c5c;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+
+body {
+  background: radial-gradient(ellipse at top, #10131e 0%, var(--bg-void) 60%);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+::selection { background: var(--storm-glow); }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--storm-dim); }
+
+button { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--storm); outline-offset: 2px; }
+
+.glass {
+  background: var(--panel);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--border-soft);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
